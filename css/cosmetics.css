@@ -1,0 +1,125 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+}
+
+.zodiac-image {
+  position: absolute;
+  bottom: -455px;
+  right: -458px;
+
+  -webkit-animation:spin 16s linear infinite;
+    -moz-animation:spin 16s linear infinite;
+    animation:spin 16s linear infinite;
+  }
+  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+}
+
+@media (max-width: 767px) {
+  .zodiac-image {
+    display: none;
+  }
+}
+
+/* .zodiac-image-small {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .zodiac-image-small {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+} */
+
+nav ul {
+  margin-bottom: 0;
+  margin-right: 15px;
+}
+
+nav ul li {
+  float: right;
+  margin-top: 10px;
+  margin-left: 35px;
+  list-style: none;
+}
+
+nav ul li a {
+  /* color: #d6d6d6; */
+  text-decoration: none;
+  font-size: 2.0rem;
+}
+
+nav ul li a:hover {
+  /* text-decoration: underline; */
+}
+
+@media (max-width: 767px) {
+
+  nav {
+    width: 242px;
+    position: absolute;
+    right: -242px;
+    -webkit-transition: right 0.6s ease;
+    -moz-transition: right 0.6s ease;
+    -o-transition: right 0.6s ease;
+    -ms-transition: right 0.6s ease;
+    top: 0;
+    bottom: 0;
+    padding-top: 18px;
+    background-color: #212121;
+    z-index: 1;
+  }
+
+  nav ul {
+    margin-right: 34px;
+  }
+
+  nav ul li {
+    float: none;
+  }
+
+  [data-state="open"] .hamburger-icon {
+    display: none;
+  }
+
+  [data-state="open"] .close-icon {
+    display: block;
+  }
+
+  [data-state="closed"] .hamburger-icon {
+    display: block;
+    padding: 6px 0;
+  }
+
+  [data-state="closed"] .close-icon {
+    display: none;
+  }
+
+  #toggleNav {
+    position: absolute;
+    left: -66px;
+    top: 0;
+  }
+
+}
+
+@media (min-width: 768px) {
+  #toggleNav {
+    display: none;
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Vedic Web Astrology</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/cosmetics.css">
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <link rel="stylesheet" href="css/lightbox.css" />
+    <script src="js/_lightbox.js"></script>
+  </head>
+  <body>
+    <nav id="sliding-nav">
+      <button id="toggleNav" data-state="closed">
+        <img class="hamburger-icon" src="images/three-lines.png" alt="open">
+        <img class="close-icon" src="images/close-icon.png" alt="close">
+      </button>
+      <ul class="u-cf">
+        <li><a href="#">Ask a question</a></li>
+        <li><a href="#">Astrologers</a></li>
+        <li><a href="#" id="basic">Today's horoscope</a></li>
+      </ul>
+    </nav>
+    <script type="text/javascript">
+      document.getElementById('toggleNav').addEventListener("click", toggleNavAction);
+      function toggleNavAction() {
+        let el = document.getElementById('toggleNav');
+
+        if (el.getAttribute('data-state') == 'closed') {
+          document.getElementById('sliding-nav').style.right = 0;
+          el.setAttribute('data-state', 'open');
+        }
+        else if (el.getAttribute('data-state') == 'open') {
+          document.getElementById('sliding-nav').style.right = '-242px';
+          el.setAttribute('data-state', 'closed');
+        }
+
+      }
+    </script>
+    <div class="container">
+      <div class="row">
+        <div class="one-half column" style="margin-top: 20%; margin-bottom:30%;">
+          <h1>Welcome to Vedic Astrology</h1>
+        </div>
+      </div>
+      <img class="zodiac-image" src="images/zodiac.svg.png" width="915" height="910">
+      <!-- <img class="zodiac-image-small" src="images/zodiac-small.svg.png" width="300" height="298"> -->
+    </div>
+
+    <script type="text/javascript">
+      window.basicLightbox = new Lightbox();
+
+      window.basicLightbox.setTitle("Today's horoscope");
+      window.basicLightbox.setContent([
+        "<p>This is a basic Lightbox with no options passed.</p>",
+        "<p>It can contain everything you can place in HTML such as Iframes, Images, Videos or just plain Text</p>",
+        "<p>The lightbox can be closed by clicking outside, pressing the escape key or clicking the X in the top right. All those options can be individually configured</p>"
+      ]);
+
+      basic.onclick = () => window.basicLightbox.open();
+    </script>
+
+  </body>
+</html>

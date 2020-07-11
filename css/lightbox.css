@@ -1,0 +1,223 @@
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  display: none;
+  overflow: auto;
+}
+.lightbox--closing {
+  animation-name: containerBgOut;
+  animation-timing-function: ease;
+}
+.lightbox--opening {
+  animation-name: containerBgIn;
+  animation-timing-function: ease;
+}
+.lightbox--open {
+  background-color: rgba(0, 0, 0, 0.4);
+  display: block;
+}
+.lightbox--open .lightbox__inner--jelly {
+  animation-name: jelly;
+  animation-timing-function: ease;
+}
+.lightbox--open .lightbox__inner--grow {
+  animation-name: grow;
+  animation-timing-function: ease;
+}
+.lightbox--open .lightbox__inner--fadein {
+  animation-name: fadein;
+  animation-timing-function: ease;
+}
+.lightbox--open .lightbox__inner--fadedown {
+  animation-name: fadedown;
+  animation-timing-function: ease;
+}
+.lightbox--open .lightbox__inner--buildup {
+  animation-name: buildup;
+  animation-timing-function: ease;
+}
+.lightbox--open .lightbox__inner--fadeout {
+  animation-name: fadeout;
+  animation-timing-function: ease;
+}
+.lightbox--open .lightbox__inner--fadeup {
+  animation-name: fadeup;
+  animation-timing-function: ease;
+}
+.lightbox--open .lightbox__inner--shrink {
+  animation-name: shrink;
+  animation-timing-function: ease;
+}
+.lightbox--open .lightbox__inner--growout {
+  animation-name: growout;
+  animation-timing-function: ease;
+}
+.lightbox--open .lightbox__inner--collapse {
+  animation-name: collapse;
+  animation-timing-function: ease;
+}
+.lightbox__inner {
+  width: 50vw;
+  max-width: 500px;
+  background-color: #ffffff;
+  margin: 20vh auto;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.lightbox__close-handler {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.lightbox__close-handler::after, .lightbox__close-handler::before {
+  position: absolute;
+  display: block;
+  content: " ";
+  transform: translate(-50%, -50%);
+  top: 15px;
+  left: 15px;
+  width: 20px;
+  height: 2px;
+  background-color: #ffffff;
+}
+.lightbox__close-handler::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.lightbox__close-handler::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.lightbox__title {
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px;
+  /* background-color: #2c3a6e; */
+  background-color: #1EAEDB;
+  margin: 0;
+}
+.lightbox__data {
+  padding: 20px;
+}
+@keyframes jelly {
+  from {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+@keyframes grow {
+  from {
+    transform: scale(0.3);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes buildup {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes fadedown {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeup {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+}
+@keyframes shrink {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.3);
+  }
+}
+@keyframes growout {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(10);
+  }
+}
+@keyframes containerBgIn {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+@keyframes containerBgOut {
+  from {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+@keyframes collapse {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
