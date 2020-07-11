@@ -69,7 +69,21 @@
     </div>
 
     <script type="text/javascript">
-      window.basicLightbox = new Lightbox();
+
+      window.basicLightbox = new Lightbox({
+        additionalClasses: [],
+        closeable: true,
+        draggable: false,
+        closeHandler: true,
+        closeByEscape: true,
+        openAnimation: "fadedown",
+        closeAnimation: "fadeup",
+        clickOutsideToClose: true,
+        animationDuration: 500,
+        boundsOffset: 20,
+        keepInBounds: true,
+        appendingElement: document.querySelector("body")
+      });
 
       window.basicLightbox.setTitle("Today's horoscope");
       window.basicLightbox.setContent([
@@ -79,6 +93,7 @@
       ]);
 
       basic.onclick = () => window.basicLightbox.open();
+
     </script>
 
   </body>
